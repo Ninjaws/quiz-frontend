@@ -1,27 +1,38 @@
 # Quiz
+App that allows the user to set up a quiz, and answer the questions
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Installation
+### Install Docker
+- On Windows and Mac
+```
+Install Docker Desktop
+Windows: https://docs.docker.com/desktop/install/windows-install/
+Mac: https://docs.docker.com/desktop/install/mac-install/
+```
+- On Linux
+```bash
+# For Debian-based systems
+sudo apt install -y docker.io
+sudo apt install docker-compose
 
-## Development server
+#For Arch-based systems
+sudo pacman -S docker.io
+sudo pacman -S docker-compose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Making Docker run now and on startup
+sudo systemctl start docker
+sudo systemctl enable docker
 
-## Code scaffolding
+# Using the CLI without sudo 
+sudo usermod -aG docker $USER
+sudo reboot
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## How to run
+- Navigate to the root of the project
+- Open a terminal
+- Start the containers: 
+```bash
+docker compose up
+```
+- Visit localhost:4200 to play the quiz!
